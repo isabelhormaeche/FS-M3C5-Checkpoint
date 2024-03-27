@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3C5 - Python Documentation Assignment</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/90bf0074e6.js" crossorigin="anonymous"></script>
+    <style>
+        
+        body {
+            
+            font-family: "Poppins";
+            font-size: 90%;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Para dividir en columnas */
+        }
+
+       /* Start Styling for the index table----------------------------- */
+        .index-table {
+            width: 30%; /*Ancho de la columna de índices*/
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-right: 1px solid #ccc;
+
+            float: left;
+        }
+
+
+        /* Index table title --> M3C5 - Table of contents */
+        .idc-titulo {
+            font-size: 18px;
+            font-weight: bold;
+            /* color: #034355; */
+            color: cadetblue;
+            padding-top: 20px;
+            padding-left: 10px;
+        }
+
+
+        /* Add sticky behavior to the index table */
+        .index-table ul {
+            position: sticky;
+            top: 0;
+
+            background-color: #f2f2f2;
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        .index-table li {
+            margin-bottom: 10px;
+            padding-left: 20px; /* Add indentation for bullet points */
+            text-indent: -10px; /* Reduce the space between bullet and text */
+        }
+
+        .index-table li::before {
+            content: "\25A0"; /* Unicode character for square bullet */
+            margin-right: 10px; /* Add spacing between bullet and text */
+            color:cadetblue
+        }
+
+         /* Change color hover table index links*/
+
+         .index-table a {
+            text-decoration: none;
+            color:cadetblue
+        }
+
+         .index-table a:hover {
+            color: #034355;/* Cambia el color a turquesa oscuro */
+        }
+
+        /* End Styling for the index table----------------------------- */
+
+
+
+        .content {
+            /* flex-grow: 1; /* Para ocupar el resto del espacio disponible */
+            padding: 20px; 
+
+            /* Styling for sticky tabla*/
+            float: left;
+            width: 60%; 
+        }
+        
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+        
+
+        /*  ESTILO CABECERA, no el título de la tabla */
+        #idc-titulo{
+            margin-top: 0px;
+            margin-bottom: 30px;
+            font-size:30px ;
+            color:cadetblue;
+        }
+
+        
+        #indice {
+            margin-bottom: 30px;
+            font-size:30px ;/* Estilo preguntas o tasks */
+        }
+       
+
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .horizontal-line {          
+        /* task separation line */
+        border: 1.5px solid cadetblue;
+        margin: 0px auto 20px 0px;
+        }
+
+        /* Code box */
+        pre{
+            background-color: #f9f9f9;
+            font-size: 14px;
+            line-height: 1.2em;
+            border: 1px solid #c9c9c9;
+            border-radius: 3px;
+            border-radius: .2rem;
+            box-shadow: 1px 1px 1px #d8d8d8;
+        }
+
+        /* Note/Remember box */
+        .note{
+
+           border: 1px solid #c9c9c9; 
+           border-radius: 3px;
+           background-color: #ffe; 
+           padding: 10px;
+           box-shadow: 3px 4px 2px #d8d8d8;
+        }
+        
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+        /* Resources links */
+        .content> .resources a {
+            color:cadetblue
+        }
+
+        .content> .resources a:hover {
+            color: #034355;/* Cambia el color al pasar el ratón a turquesa oscuro */
+        }
+
+       
+
+        /* Estilos para el footer/Copyright */
+        .footer {
+            width:100%;
+            clear: both; /* Limpia los flotantes */
+            text-align: center; /* Centra el contenido */
+            padding: 20px 0; /* Agrega espacio alrededor del texto */
+            background-color: #f2f2f2; /* Color de fondo */
+            margin-top: 100px;
+        }
+
+        .content> .footer p{
+            /* color:cadetblue; */
+            font-size: 90%;
+            align-self: flex-end;
+            color:cadetblue
+        }
+        
+        .content> .footer a {
+            color:cadetblue;
+            font-size: 90%;
+            align-self: flex-end;
+            /* color:cadetblue */
+        }
+
+        .footer a:hover {
+            color: #034355; /* Cambia el color al pasar el ratón */
+        }
+
+
+
+        
+        /* Right column with btn-up */
+        .right-column {
+        display: flex;
+        height: auto; 
+        width:30%;
+        /* border: 2px solid cadetblue; */
+        border-left: 1px solid #ccc;
+        background-color: #f9f9f9; 
+    }
+        /* Estilos para el botón de subir */
+        .btn-up {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: cadetblue;
+            padding: 10px;
+            border-radius: 40%;
+            font-size: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <!-- Tabla de índices -->
+    <div class="index-table">
+        <ul class="idc-lista">
+            <p class="idc-titulo">M3C5 - Table of Contents</p>
+            <li><a href="#indice1">1. <strong>What is a conditional?</strong></a>
+                <ul>
+                    <li><a href="#subindice1">1.1. The <strong>"if"</strong> Statement</a></li>
+                    <li><a href="#subindice2">1.2. The <strong>"if-else"</strong> Statement</a></li>
+                    <li><a href="#subindice3">1.3. <strong>"if-elif-else"</strong> Statement</a></li>
+                    <li><a href="#subindice4">1.4. The Ternary Operator</a></li>
+                    <li><a href="#subindice5">1.5. Conditional Operators</a></li>
+                    <li><a href="#subindice6">1.6. <strong>"in"</strong> operator</a></li>
+                    <li><a href="#subindice7">1.7. Compound Conditionals</a></li>
+                </ul>
+            </li>
+            <li><a href="#indice2"><strong>2. What are the different types of loops in Python?</strong></a>
+                <ul>
+                    <li><a href="#subindice8">2.1.<strong> for</strong> Loop</a></li>
+                    <li><a href="#subindice9">2.2.<strong> while</strong> Loop</a></li>
+                    <li><a href="#subindice10">2.3. Summarizing</a></li>
+                </ul>
+            </li>
+            <li><a href="#indice3"><strong>3. What is List Comprehension in Python?</strong></a>
+                
+            </li>
+            <li><a href="#indice4"><strong>4. What is an argument in Python?</strong></a>
+                <ul>
+                    <li><a href="#subindice13">4.1. Default arguments</a></li>
+                    <li><a href="#subindice14">4.2. Positional arguments</a></li>
+                    <li><a href="#subindice15">4.3. Named arguments<a></li>
+                    <li><a href="#subindice16">4.4. Unpacking / Arbitrary arguments</a></li>
+                    <li><a href="#subindice17">4.5. How to Combine "all argument types" </a></li>
+                </ul>
+                </li>
+                <li><a href="#indice5"><strong>5. What is a Python Lambda function?</strong></a>
+                
+                </li>
+                <li><a href="#indice6"><strong>6. What is a pip package?</strong></a>
+                    <ul>
+                        <li><a href="#subindice18">6.1. How to Install</a></li>
+                        <li><a href="#subindice19">6.2. <code>pip</code> Syntax</a></li>
+                        <li><a href="#subindice20">6.3. Example: importing NumPy library<a></li>
+                        </ul>
+
+                </li>           
+            </ul>
+        </div>
+
+
+    <!-- Ancla en la cabecera -->
+    <div id="cabecera"></div>
+            
+
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <h1 id="idc-titulo">M3C5 - Python Documentation Assignment</h1>
+                
+                
+        <h1 id="indice1" style="font-size: 30px;">1. What is a conditional?</h1>
+        <!-- TASK ONE -->
+        <div class="horizontal-line"></div> <!-- Line for task separation -->
+                
+                
+        <p>Conditionals are very useful control structures in Python that allow us to make decisions based on the value of an expression. In other words, conditionals allow us to make Python take different paths depending on whether a certain condition is met or not (True or False).</p>
+        <p>They are essential for creating dynamic behavior in Python programs. Conditionals allow us to control the flow of execution based on specific conditions, making our code more flexible and responsive.</p>            
+        <p>In Python, conditional statements are primarily constructed by using the <code>if</code>, <code>elif</code>, and <code>else</code> keywords:</p>
+           
+                  
+        <h1 id="subindice1">1.1. The "if" Statement</h1>
+        
+        <p>The <code>if</code> statement allows you to execute a block of code if a certain condition is true. Here's the basic syntax:</p>
+        <pre><code>if condition:
+        # code to execute if condition is true
+        </code></pre>
+
+        
+        <!-- REMINDER--------------------------- -->
+        <div class="note">
+            <p><strong>Remember:</strong> Proper indentation (usually 2 or 4 spaces) is crucial when using conditional statements in Python. The level of indentation determines which code block is executed based on the condition. The condition can be any expression that evaluates to a Boolean value (True or False). If the condition is True, the indented code block below the <code>if</code> statement will be executed; otherwise, it will be skipped.</p>
+        </div>
+
+        <p>Here's an example of how to use an <code>if</code> statement:</p>
+        <pre><code>a = 1
+b = 2
+
+if b > a:
+    print("b is in fact bigger than a")  # Output: b is in fact bigger than a
+        </code></pre>
+        <p>In this example, we use the <code>></code> operator to compare the value of <code>a</code> to <code>b</code>. If <code>b</code> is greater than <code>a</code> (True), the code block indented below the <code>if</code> statement will be executed, and the message "b is in fact bigger than a" will be printed. If it wasn't (True), nothing would have happened; no code would have run.</p>
+
+    
+
+        
+        <h1 id="subindice2">1.2. The "if-else" Statement</h1>
+
+        <p>The "if-else" structure allows us to execute one statement if the condition is met (True), and another statement if the condition is not met (False). The "else" statement allows you to execute a different block of code if the "if" condition is False. Here's the basic syntax:</p>
+        <pre><code>
+if condition:
+    # code to execute if condition is true
+else:
+    # code to execute if condition is false
+        </code></pre>
+        <p>If the condition is True, the code block indented below the "if" statement will be executed, and the code block indented below the "else" statement will be skipped.</p>
+        <p>If the condition is False, the code block indented below the "else" statement will be executed, and the code block indented below the "if" statement will be skipped.</p>
+        <p>Here's an example of how to use an "if-else" statement:</p>
+        <pre><code>
+if age &lt; 25:
+    print(f"I'm sorry, you need to be at least 25 years old to rent a car")
+else:
+    print(f"You're good to go, {age} fits in the range to rent a car.")
+    # condition is either True or False
+        </code></pre>
+
+
+
+        <h1 id="subindice3">1.3. "if-elif-else" Statement</h1>
+
+        <p>The "elif" statement is short for "else if". It allows you to check multiple conditions in sequence and execute different code blocks depending on which condition is true. Here's the basic syntax:</p>
+       
+        <pre><code>
+if condition1:
+    # code to execute if condition1 is true
+elif condition2:
+    # code to execute if condition1 is false and condition2 is true
+elif condition3:
+    # code to execute if condition1 and condition2 are false, and condition3 is true
+else:
+    # code to execute if all conditions are false
+        </code></pre>
+
+        <p>Here's an example of how to use an "if-elif-else" statement:</p>
+      
+        <pre><code>if age < 25:
+        print(f"I'm sorry, you need to be at least 25 years old")
+elif age > 100:
+    print(f"I'm sorry, {age} is too old to rent a car")
+else:
+    print(f"You're good to go, {age} fits in the range to rent a car.")
+        </code></pre>
+        
+        <p>If the first two conditions (<code>if</code> and <code>else</code>) are false, the final <code>else</code> statement will be executed, running whatever is inside that code block. When checking multiple conditions, consider using <code>elif</code> to avoid excessive nesting.</p>
+
+
+
+        <h1 id="subindice4">1.4. The Ternary Operator</h1>
+
+        <p>The Ternary Operator allows you to create an <code>if-else</code> statement on a single line.</p>
+        
+        <!-- NOTE---------------------------------------------------- -->
+        <p><strong>Note:</strong> <em>Simple is better than complex</em> referencing PEP 20, which is the Zen of Python. When implementing the ternary operator, ensure that it improves readability compared to a standard <code>if-else</code> statement. Making your code harder to read can be challenging for you (when revisiting it in the future) and for other developers you collaborate with.</p>
+        
+        <p>For example, if you are building a web application with an authorization component, and the role is set to admin (administrator), then we want them to access the dashboard. And if not (a guest user), they cannot access.</p>
+        
+        <pre><code>
+#role = 'admin'
+role = 'guest'
+auth = 'can access' if role == 'admin' else 'cannot access'
+print(auth)
+        </code></pre>
+       
+        
+    
+        <h1 id="subindice5">1.5. Full List of Python Conditional Operators</h1>
+
+        <p>Conditional Operators are what we place inside of our condition to check for elements such as equality or inequality.</p>
+        <p>We can also test for value ranges, such as checking whether an element is greater than or equal to a value or lesser than or equal to another value. Python supports the usual logical conditions from mathematics:</p>
+        <ul>
+            <li><code>==</code> Equality</li>
+            <li><code>!=</code> Inequality</li>
+            <li><code><></code> Inequality (deprecated)</li>
+            <li><code>></code> Greater than</li>
+            <li><code>>=</code> Greater than or equal to</li>
+            <li><code><</code> Less than</li>
+            <li><code><=</code> Less than or equal to</li>
+        </ul>
+        <p>We can implement these operators with various data structures such as numbers, strings, lists, tuples, and dictionaries.</p>
+        <p>Here are some examples of Equality and Inequality operators working for both <strong>numbers</strong> and <strong>strings</strong>.</p>
+        
+        <h2>Equality with <code>numbers</code>:</h2>
+
+        <pre><code>age = 55
+
+if age != 90:
+    print("Welcome!")
+else:
+    print("You shall not pass!")
+        </code></pre>
+        
+        
+        <h2>Equality with <code>strings</code>:</h2>
+        
+        <pre><code>username = "jonsnow"
+#username = "Alex"
+        
+if username == "jonsnow":
+    print("Welcome!")
+else:
+    print("You shall not pass!")
+        </code></pre>
+        
+        <!-- NOTE---------------------------------------------------- -->
+        <div class="note">
+            <p><strong>Note:</strong> The <code>==</code> is a comparison operator (compares if exactly equal). It is important to remember that you must use a double equal sign. If you use only <code>=</code> in the <code>if</code>, you will be using the assignment operator, that is, establishing that <code>username</code> is equal to <code>jonsnow</code>, so the condition would always be true.</p>
+        </div>
+        
+
+        <h2>Example of equality implemented with a <code>list</code>:</h2>
+
+        <p>Some real cases when we may want to compare two identical lists could be, for example:</p>
+        <ul>
+            <li>When we are building out a system that checks for duplicates, or</li>
+            <li>If we are implementing a machine learning algorithm and checking whether historical data matches up with some of the current test data we're working with.</li>
+        </ul>
+            
+        <pre><code>user_list = ["kristine", "Tiffany"]
+second_list = ["kristine", "Tiffany"]
+        
+if user_list == second_list:
+    print("They match")
+        </code></pre>
+
+        <h2>We also have a full set of greater than and less than operators.</h2>
+
+        <p>But, <strong>these only work for numbers</strong>:</p>
+        <ul>
+            <li>> Greater than</li>
+            <li>>= Greater than or equal to</li>
+            <li>< Less than</li>
+            <li><= Less than or equal to</li>
+        </ul>
+       
+        <p>For example:</p>
+        <pre><code>age = 55
+if age > 10:
+    print("Welcome!")
+else:
+    print("You shall not pass!")</code></pre>
+
+
+
+
+        <h1 id="subindice6">1.6. <code>in</code> operator</h1>
+
+        <p>We can also use the <code>in</code> operator to check if one element is inside or contained in another element in a Python String or List.</p>
+        
+        <h2>1.6.1. In a string</h2>
+        
+        <p>As in this example:</p>
+        <pre><code>
+sentence = 'The quick brown fox jumped over the lazy Dog'
+#word = 'quick'
+word = "dog"             # ***ATTENTION!!!!*** is CASE SENSITIVE
+                
+if word in sentence:
+   print("The word was found in the sentence")
+else:
+   print("The word was not found in the sentence")
+        </code></pre>
+    
+        <p> <strong>To make it case insensitive we add the lower() function.</strong></p>
+        <p>For example:</p>
+
+        <pre><code>
+if word.lower() in sentence.lower():
+   print("The word was found in the sentence")
+else:
+   print("The word was not found in the sentence")
+        </code></pre>
+
+        <h2>1.6.2. In a List</h2>
+
+        <p>The <code>in</code> operator can also work with collections of data such as lists. For example:</p>
+        <pre><code>
+nums = [1, 2, 3, 4]
+if 3 in nums:
+    print("The number was found")
+else:
+    print("The number was not found")
+        </code></pre>
+
+
+
+        <h1 id="subindice7">1.7. Compound Conditionals</h1>
+        
+        <p>Another type of conditional in Python are the compound conditionals that allow us to add multiple conditions inside in the same statement. When we need to use more than one condition we can use the `and` and ``or`` operators. </p>
+       
+      
+        <h2>1.7.1. <code>and</code> operator</h2>
+        <p>We can build what is called the <code>and</code> operator into our system when we want to check if two conditions are true at the same time.</p>
+        <p>Everything on the left-hand side and the right-hand side must be true in order for the code block to be executed.</p>
+        <p>It is very useful when we want to add a higher level of difficulty or a high level of restriction because we are chaining multiple conditions that have to be true in order to work:</p>
+        
+        <pre><code>
+username = 'jonsnow'
+email = 'jon@snow.com'
+password = 'thenorth'
+        
+if username == "jonsnow" and password == "thenorth":
+    print("Access permitted")
+else:
+    print("You shall not pass!")
+        </code></pre>
+        
+        <h2>1.7.2. <code>or</code> operator</h2>
+        <p>In the case of the <code>or</code> operator, it means "or," and we use it when we only need one of the conditions to be met. It is more flexible compared to using the <code>and</code> operator.</p>
+        
+        <p>Example of <code>or</code>:</p>
+        
+        <pre><code>
+        if username == "jonsnow" or password == "thenorth":
+            print("Access permitted")
+        else:
+            print("You shall not pass!")  # Returns true even if I put username = "sansa"
+        </code></pre>
+        
+        <p>The <code>or</code> operator checks the left-hand side first. If it's true, it skips everything to the right because all that has to occur for the <code>or</code> operation to be considered true is for one side to match up and be true.</p>
+        
+        <h2>1.7.3. Nested <code>if</code></h2>
+        <p>Conditions can be placed inside each other and will work the same way. However, it is not recommended:</p>
+        
+        <pre><code>
+        if username == "jonsnow":
+            if password == "thenorth":
+                print("Access permit")
+        else:
+            print("You shall not pass!")
+        </code></pre>
+
+        
+        
+        <!-- #no borrar esta línea fantasma -->
+        <a  href="#"></a> 
+
+            
+        <div class="resources">      
+            <h2>References and further reading</h2>
+            <p>You can consult more information about <strong>conditionals</strong> on the following links:</p>
+            <a  href="https://apuntes.de/python/estructuras-de-control-condicionales-y-bucles-en-python/#gsc.tab=0">Apuntes de Python - Estructuras de control</a>
+            <br>
+            <a  href="https://www.freecodecamp.org/news/python-if-else-statement-conditional-statements-explained/">Python If Else Statement - Conditional Statements Explained</a><br>
+                <!-- <p>Check out these Python resources:</p> ------------------------------->
+            <a  href="https://cosasdedevs.com/posts/sentencias-if-elif-else-python/">Sentencias If, Elif y Else en Python</a><br>
+            <a  href="https://docs.python.org/3/reference/compound_stmts.html#the-if-statement">Python Documentation - The if Statement</a><br>
+                
+            <h2>Exercises for practice:</h2>
+            <a  href="https://www.w3schools.com/python/exercise.asp?filename=exercise_ifelse1">Python Basics - Textbook</a>
+        </div>        
+
+
+
+        <!-- TASK TWO -------------------------------------------------->
+
+        <h1 id="indice2" style="font-size: 30px;">2. What are the different types of loops in Python? Why are they useful?</h1>
+        <div class="horizontal-line"></div> <!-- Line for task separation -->
+        
+
+        <h1 id="subindice8">2.1. <code>for</code> Loop</h1>
+        
+        <p>The <code>for</code> loop iterates over each item in a sequence (such as a list, tuple, dictionary, set, or string) in order. It executes the same block of code for every item. The <code>for</code> loop is helpful when:</p>
+        <ul>
+            <li>You know the number of times you want to execute a block of code.</li>
+            <li>You want to execute the same code for each item in a given sequence.</li>
+        </ul>
+        <p>The general syntax for a <code>for</code> loop in Python looks like this:</p>
+        
+        <pre><code>
+for placeholder_variable in sequence:
+    # code that does something
+        </code></pre>
+        
+        <p>Example: Print each fruit in a fruit list:</p>
+        
+        <pre><code>
+fruits = ["apple", "banana", "cherry"]
+        
+for x in fruits:
+    print(x)
+        </code></pre>
+        
+        <h2>Looping Through a List</h2>
+        
+        <p>Example:</p>
+        
+        <pre><code>
+nombre = 'Enrique'
+lista_nombre = ['Jessica', 'Paul', 'George', 'Henry', 'Adán']            
+            
+for nombre_lista in lista_nombre:
+            
+    if nombre_lista == nombre:
+        print(f"{nombre} aparece en la lista")
+    break
+    else:
+        print(f"{nombre} no aparece en la lista")            
+        </code></pre>
+        
+        
+        <h2>Looping Through a String</h2>
+        We could treat a string like a collection of characters and iterate through that collection, like a list:
+        <pre><code>
+name = "Isabel"
+    
+for letter in name:
+    print(letter)
+    # output
+    
+# I
+# s
+# a
+# b
+# e
+# l
+        </code></pre>
+
+        <h2>Looping Through a Dictionary</h2>
+        <p>To loop over key and value pairs in a dictionary, we need to do what is called tuple unpacking by specifying two variables.</p>
+        <p>We will also need to use the .items() method to loop over both the keys and values.</p>
+        <pre><code>
+interviewed_info = {
+'name':'Nadal',
+'job title':'tennis player',
+'country':'Spain'
+}
+            
+for key,value in interviewed_info.items():
+    print(key,":",value)
+
+#output
+#name : Nadal
+#job title : tennis player
+#country : Spain
+        </code></pre>
+        
+        <h2>Looping Over Ranges</h2>
+        <p>We have the kind of control and flexibility for only grabbing the elements and the intervals that we actually  want to show.</p>
+        <p>It is practical tool when we know that we have a set number of times that we want to loop through some specific data set but we do not want to limit it to how many items are in some type of collection such as iterating over a list.</p>
+
+        <p>The way that a range works is very similar to grabbing items and slicing items inside of a list. Python treats the second argument as an upper bound which means it do not actually go up to 10.</p> 
+        <p>For example if we want 10, we will do:</p>
+        <pre><code>
+for num in range(1, 11):
+    print(num) #Output: 1 2 3 4 5 6 7 8 9 10 # iterates through 1 to 10!!! just before 11.
+        </code></pre>
+
+        <p>When we want to skip values in our loop. To achieve this, we set the step to 2:</p>
+        <pre><code>
+for num in range(1, 11, 2):
+    print(num)  # Output: 1 2 5 7 9
+        </code></pre>
+
+        <p>Instead of the default behavior where the loop increments by 1 in each iteration, this modified loop skips every second value, resulting in the output shown above.
+        </p>
+
+
+        <h2>2.1.2.Control flow logic operators: <code>Continue</code> and <code>Break</code> in Loops</h2>
+
+        <h2><code>continue</code></h2>
+        <p>The <code>continue</code> statement stops the current iteration at a specific point and moves on to the next item of the iterable object. It does not exit the loop entirely. Check the following example:</p>
+        <pre><code>
+usernames = [
+ 'jon',
+'tyrion',
+'theon',
+'cersei',
+'sansa',
+ ]
+        
+for username in usernames:
+    if username == 'cersei':
+        print(f'Sorry, {username}, you are not allowed') #(format statement)
+        continue
+    else:
+        print(f"{username} is allowed")  
+
+ #OUTPUT 
+#jon is allowed
+# tyrion is allowed
+# theon is allowed
+# Sorry, cersei, you are not allowed
+# sansa is allowed
+        </code></pre>
+
+        <h2><code>break</code></h2>
+        <p>We can use the <code>break</code> statement when we want to exit the loop prematurely if a specific condition is met. In the following example, we search for "cersei" and then exit the loop once found:</p>
+        
+        <pre><code>
+for username in usernames:
+    if username == 'cersei':
+        print(f"{username} was found at index {usernames.index(username)}")
+        break
+    print(username) 
+
+# OUTPUT: 
+# jon
+# tyrion
+# theon
+# cersei was found at index 3
+        </code></pre>
+
+        <P><code>break</code> stops the loop and it stops at the first element (“cersei”) that matches the condition. And exit the loop.</P>
+
+
+        <h1 id="subindice9">2.2.<code> while</code> Loop</h1>
+   
+
+
+        <p>Essentially, a <code>while True</code> loop is a loop that continuously evaluates to <code>True</code> and therefore runs endlessly. It will never stop until we force it to stop.</p>
+        <p>The key difference between using a <code>for-in</code> loop vs. a <code>while</code> loop is that with a <code>for-in</code> loop, we have a clearly defined start and finish. However, with a <code>while</code> loop, we do not have a definite start and finish.</p>
+        <p>The general syntax for writing a <code>while</code> loop in Python looks like this:</p>
+        <pre><code>
+while condition:
+    # body of while loop containing code that does something
+        </code></pre>
+        
+        <p>The <code>while</code> loop will not stop when it reaches the end of a list (if that's what we are iterating over). It has to be explicitly told when to stop by setting a sentinel value.</p>
+    
+
+        <h2>2.2.1. When we know when we want to stop</h2>
+
+        <p>Here is an example where the sentinel value is when the length of our number list is not greater than 0:</p>
+        
+        <pre><code>
+nums = list(range(1, 100))
+
+while len(nums) > 0:  #sentinel value 
+    print(nums.pop())
+
+    #iterates over our list, pops off the last element, prints it out, and removes it from the list. It starts from the end, with 99, then 98, and so on.
+        </code></pre>
+
+
+        <h2>2.2.2. When we do not know when we want to stop</h2>
+        <p>Here we have an example of a <code>while True</code> loop.</p>
+        <p>It is a guess-number game with a <code>while True</code> loop. This means the loop will continue indefinitely until a specific condition is met. We use a sentinel value (<code>guess == "42"</code>) where, whenever the correct guess is presented by the user, it will execute the instruction “return false” and that will stop our <code>while</code> loop:</p>
+        
+        <pre><code>
+while True:
+    print("What is your guess?")  <!-- Prompt the user for input -->
+    guess = input()
+
+    if guess == "42":
+        print("You correctly guessed it!")
+        return False
+    else:
+        print(f"No, {guess} is not the answer, please try again\n")  <!-- Prompt the user for input again -->
+        </code></pre>
+    
+        <p>Within the above loop, this is what happens:</p>
+        <ul>
+            <li>It prints the message “What is your guess?” to prompt the user for input.</li>
+            <li>It reads the user’s input and assigns it to the variable <code>guess</code>.</li>
+            <li>If the user’s input is equal to the string “42”, it prints “You correctly guessed it!” and returns <code>False</code>, effectively ending the loop.</li>
+            <li>Otherwise, it prints a message indicating that the guess is incorrect and prompts the user to try again.</li>
+        </ul>
+
+        <h1 id="subindice10">2.3. Summarizing</h1>
+        <p>It is important to ensure that the <code>for</code> or <code>while</code> loop has a termination condition to avoid infinite loops.</p>
+        <p>The main differences between <code>for</code> loops and <code>while</code> loops in Python are:</p>
+        <ul>
+            <li><strong><code>for</code> Loop:</strong></li>
+            <ul>
+                <li>Used when the number of iterations is predetermined.</li>
+                <li>Commonly used for iterating over sequences like lists, tuples, strings, or ranges.</li>
+                <li>Efficient for sequences with a predetermined length.</li>
+            </ul>
+            <li><strong><code>while</code> Loop:</strong></li>
+            <ul>
+                <li>Operates without prior knowledge of the number of iterations (e.g., waiting for user input).</li>
+                <li>Continues to execute a block of statements while a condition remains true.</li>
+            </ul>
+        </ul>
+
+        <div class="resources">      
+            <h2>References and further reading</h2>
+            <p>You can consult more information about <strong>loops</strong> on the following links:</p>
+            <a href="https://www.freecodecamp.org/news/for-loops-in-python-with-example-code/">For Loops in Python with Example Code</a>
+            <br>
+            <a href="https://www.w3schools.com/python/python_for_loops.asp">Loops - Learn Python - Free Interactive Python Tutorial</a>
+            <a href="https://apuntes.de/python/estructuras-de-control-condicionales-y-bucles-en-python/#gsc.tab=0">Apuntes de Python - Estructuras de control</a>
+            <br>
+            
+            <h2>Exercises for practice:</h2>
+            <a href="https://www.w3schools.com/python/python_for_loops.asp">Loops - Learn Python - Free Interactive Python Tutorial</a>
+        </div>
+
+        
+<!-- TASK THREE---------------------------------------------------------- -->
+        <h1 id="indice3" style="font-size: 30px;">3. What is List Comprehension in Python?</h1>
+
+        <p>It is a very powerful tool in Python that allows us to create new lists out of existing lists.</p>
+        <p>We can use it to filter, format, modify, or do other small tasks on existing iterables.
+        </p>
+        <p>List comprehension is essentially a set of for-in loops and conditionals that can all be placed  inside of ***a single line of code*** enclosed in square brackets. 
+        </p>
+        <p>It is a good choice if we want to keep our code compact and readable.
+        </p>
+        <p>For example, bellow we create a list that catches even numbers:</p>
+
+        <pre><code>
+num_list = range(1, 11)
+even_numbers = []
+
+for num in num_list:
+    if num % 2 == 0:        
+    even_numbers.append(num)
+        
+print(even_numbers) # [2, 4, 6, 8, 10]
+
+        </code></pre>
+
+        <p>We now use list comprehension and we see our code looks simple, compact, and faster.
+        </p>
+        <pre><code>
+even_numbers = [num for num in num_list if num % 2 == 0]
+
+print(even_numbers) # [2, 4, 6, 8, 10]
+        </code></pre>
+
+        <p>Above we saw how list comprehension was able to complete a task in just a single line which a for loop completed in multiple lines. But we should avoid using list comprehension if you have too many conditions to add for filtering or modifying as it will make your code more complex and harder to read.
+        </p>
+        <p>Additionally, when we work with massive sets of information, lists can present us with an efficiency and memory limitation problem.
+        </p>
+        <p>What happens when we need to create, for example, a list of 1 million numbers? Creating such a large list would not be very practical and would probably consume all the available memory on the computer. In this situation, generators are a perfect solution.
+        </p>
+        <p>To learn  about <strong>generators</strong> and check some examples we can check this link: <a style="color:cadetblue"  href="https://apuntes.de/python/generadores-y-comprensiones-de-listas-en-python-eficiencia-y-flexibilidad/#gsc.tab=0 
+            ">Generadores y comprensiones de listas en Python: eficiencia y flexibilidad</a>
+        </p>
+       
+
+        <div class="resources"> 
+            <h2>References and further reading</h2>
+            <p>You can find some more information about <strong>List comprehension</strong> on the following links:</p>
+            
+            <a href="https://docs.python.org/dev/tutorial/datastructures.html#list-comprehensions">Python-list-comprehensions</a>
+            <br>
+        </div>
+    
+       
+
+<!-- TASK FOUR---------------------------------------------------------- -->
+
+        <h1 id="indice4" style="font-size: 30px;">4. What is an argument in Python?</h1>
+        
+        
+        <p>Arguments in functions refer to values that are passed to a function to perform a specific task. Information can be passed into functions as arguments.</p>
+        <p>There are different types of arguments that can be passed to a function in Python:</p>
+        
+         <h1 id="subindice13">4.1. Default arguments</h1>       
+        <p>Default arguments are values that are assigned to the parameters of a function in case values are not supplied for them when calling the function. This can be useful to provide a default value that the function can use if a specific value is not provided.</p>
+        <pre><code>
+def greeting(name='Guest'):
+    print(f'Hi {name}!')
+        
+greeting()        # Hi Guest!
+
+# greeting('Isabel')  # Hi Isabel!</code></pre>
+        <p>However, when we pass in a string (e.g., 'Isabel'), it overrides the default argument.</p>
+        
+        
+        <h1 id="subindice14">4.2. Positional arguments</h1>   
+        <p>These arguments are passed to a function in the order in which they were defined in the function signature (the order that we passed the values in while creating the function). For example:</p>
+        <pre><code>
+def sum(a, b):
+    return a + b
+
+result = sum(2, 3)
+print(result)  # Prints 5
+        </code></pre>
+ 
+        <p>In this example, the arguments a and b are positional arguments and are passed in the order in which they were defined in the signature of the sum function.
+        </p>
+        <p>Positional arguments can become confusing in larger programs. Named arguments (keyword arguments) allow for more explicit mapping.</p>
+         
+        <h1 id="subindice15">4.3. Named arguments</h1> 
+
+        <p>Named arguments are passed to a function by specifying their name in the function call.</p>
+        <p>Explicitly declaring the mapping allows us to pass values in any order we prefer:</p>
+        <pre><code>
+def full_name(first, last):
+    print(f'{first} {last}')
+
+full_name(first="Rafael", last="Nadal")  # Rafael Nadal
+full_name(last="Nadal", first="Rafael")  # Rafael Nadal
+</code></pre>
+    
+        <p>It is considered bad practice to set a default argument as a list.</p>
+
+        <!-- NOTE-------------------------------------------------------------------------------------------- -->
+
+        <div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 10px;">
+        <p><strong>Note:</strong> Avoid using lists as default arguments in function parameters. Lists are mutable, and using them as defaults can lead to unexpected behavior.</p>
+        </div>
+        
+
+
+        <P>All functions can use either named or pure positional arguments and it's completely up to us. But, if there are more than 2 arguments, it is recommended to use named arguments simply because it prevents any issues with us placing the values in the wrong order or calling the wrong name or anything related to that.
+        </P>
+
+        <h1 id="subindice16">4.4. Unpacking arguments/Arbitrary arguments</h1> 
+        <p>There are situations where a function needs to take a collection of data, and we cannot hard-code a list of items. In such cases, unpacking arguments or using arbitrary arguments becomes useful.</p>
+
+
+        <p>Function unpacking arguments are a powerful tool in Python, allowing us to work with an indeterminate number of elements in a function.</p>
+        <p>Arguments with <code>*</code> are used to work with lists and tuples, while arguments with <code>**</code> are used to work with dictionaries and define named arguments in a function.</p>
+        <p>With this approach, we achieve greater flexibility and adaptability in our functions, which is essential in programming.</p>
+        <h2>Using <code>*args</code></h2>
+        <p>The <code>*args</code> syntax allows us to pass an arbitrary number of positional arguments to a function. It collects all the arguments into a tuple named <code>args</code>:</p>
+        
+        <p>The syntax for using unpacking is: We start off with a star "*" and then the common convention is to name the argument list "args". This represents an unpacked version or a list of items that are going to be passed into the function.
+        <p></p>Example of use of "*args"::</p>
+        <pre><code>
+def today_menu(*args):
+    print("Today's menu:")
+
+    for arg in args:
+        print(f'* {arg}')
+
+today_menu('Soup', 'Teriyaki Chicken', 'Cheesecake', 'One drink')
+
+#Output:
+Today's menu:
+* Soup
+* Teriyaki Chicken
+* Cheesecake
+* One drink
+        </code></pre>
+
+
+        <h2>Using Keyword Arguments <code>**kwargs</code></h2>
+    
+        <p>Python does have a way where we can take in a keyword list of arguments. Example:</p>
+    
+        <pre><code>
+
+def greeting(**kwargs):
+
+        if kwargs:
+            print(f"Hi {kwargs['first_name']} {kwargs['last_name']}, have a great day!")
+        else:
+            print('Hi Guest have a great day!')
+    
+
+greeting()     #Hi Guest have a great day!
+greeting(first_name = "Rafa", last_name = "Nadal")      #Hi Rafa Nadal, have a great day!
+       
+        </code></pre>
+    
+
+
+
+
+        <h1 id="subindice17">4.5. How to Combine "all argument types" in a single Python function Unpacking arguments</h1> 
+
+        <P>Example:</P>
+        <pre><code>
+def greeting(time_of_day, *args, **kwargs):
+        print(f"Hi {' '.join(args)}, I hope that you're having a good {time_of_day}.")
+        
+        if kwargs:
+            print('Today´s menu at the Pool Bar is:')
+            
+        for key, val in kwargs.items():
+            print(f'{key} - {val}')
+            
+greeting('Morning',
+            'Rafa', 'Nadal',
+            Starter = ' Miso Soup',
+            Main = 'Teriyaki Chicken',
+            Dessert = 'Cheesecake',
+            Drink = 'One drink')
+            
+# Output:  a greeting with a full set of arguments.::
+            
+#Hi Rafa Nadal, I hope that you're having a good Morning.
+#Today´s menu at the Pool Bar is:
+#Starter - Miso Soup
+#Main - Teriyaki Chicken
+#Dessert - Cheesecake
+#Drink - One drink
+            </code></pre>
+            
+        <p>Process:</p>
+        <p>We have started with a positional argument then we passed in a set of items or which is going to be converted into a tuple of arguments and then we passed in a full set of keyword argument.  
+                And "".join" takes in a collection and then, it converts it and outputs a string.</p>
+                
+        <div class="resources"> 
+        <h2>References and further reading</h2>
+        <p>You can find some more information about <strong>Arguments</strong> on the following links:</p>
+        <a href="https://apuntes.de/python/manejo-de-argumentos-en-funciones-python-flexibilidad-y-adaptabilidad/#gsc.tab=0
+            ">Manejo de argumentos en funciones Python: flexibilidad y adaptabilidad</a>
+
+        <h2>Exercises for practice:</h2>
+        <a href="https://www.w3schools.com/python/python_functions.asp">Python Functions</a>
+        </div>
+
+
+
+
+    <!-- TASK FIVE ---------------------------------------------------------------------------------------------->
+
+        <h1 id="indice5" style="font-size: 30px;">5. What is a Python Lambda function?</h1> 
+            <div class="horizontal-line"></div> <!-- Line for task separation -->
+
+
+        <p>The lambda function gives you the ability to wrap functionality, store it in a variable and then pass that entire process to other functions and other parts of your program quickly and easily.
+        </p>
+        <p>A lambda function is a small anonymous function. It allows you to write a function on a single line. Usually, a smaller function and that can be easily pass it as an argument to other functions.
+        </p>
+        <p>It is a tool that allows you to wrap up a process, a function and returns a value so we are pretty much always going to be using a lambda where we are returning something.
+        </p>
+
+    <!------------------- NOTE--------------------------------------- -->
+    
+        <div class="note">
+            <p><strong>Note:</strong> A lambda is only going to return the value. No print.</p>
+        </div>
+
+
+        <p>To create a lambda, we just say Lambda, followed by the list of arguments (first, last).  The syntax of the lambda expression in python is as follows:
+        </p>
+        <pre><code>
+lambda arguments: expression
+        </code></pre>
+            
+        <p>Example:</p>
+
+        <p>Whatever comes after the colon is going to be the value that is returned(formatted string).</p>
+
+        <pre><code>
+full_name = lambda first, last: f'{first} {last}'
+    print(full_name("Rafael", "Nadal"))                
+        </code></pre>
+
+        <p>We return a full_name value and will be stored in the variable full_name.</p>
+
+        <p>Now, in the following example, we use the lambda full_name as an argument inside the greeting function.</p>
+
+        <pre><code>
+def greeting(name):
+        print(f"Hi there {name}")
+
+
+greeting(full_name("Rafael", "Nadal"))
+
+        </code></pre>
+        <div class="resources">         
+        <h2>References and further reading</h2>
+        You can have some more information about the <strong>Lambda function</strong> on the following link:
+        <a href="https://www.freecodecamp.org/news/lambda-expressions-in-python//
+            ">Lambda Expressions</a>
+        <h2>Exercises for practice:</h2>
+        <a href="https://www.w3schools.com/python/python_lambda.asp">Python Lambda</a>
+        </div>
+
+
+
+
+        <!-- TASK SIX ----------------------------------------------------------------------------------->
+        <h1 id="indice6" style="font-size: 30px;">6. What is a pip package?</h1>
+        <div class="horizontal-line"></div> <!-- Line for task separation -->
+        
+
+        <p><strong>Pip</strong> is a recursive acronym that stands for either <strong>pip installs packages</strong> or <strong>pip installs python</strong>.</p>
+                
+        <p><code>pip</code> is the package management system used to install and manage external libraries in Python (that do not come with the default Python installation). With Pip, it is easy to install and update packages. The management system ensures that all dependencies are installed correctly and always keeps everything up to date:</p>
+            
+        <pre><code>pip install package_name</code></pre>
+
+        <p><code>pip</code> allows you to call outside packages that are stored inside what is called the PyPI store or the Cheese shop <a style="color:cadetblue" href="https://pypi.org/">PyPI</a>. We can bring in modules and packages (code) that other developers have created and use those in our own programs.</p>
+                
+        <p>In order to use it, you first have to install it on your system.</p>
+                
+
+
+        <h1 id="subindice18">6.1. How to Install <code>pip</code> on a Mac or Windows Machine</h1>
+                
+
+        <p>Usually, <code>pip</code> is automatically installed if you are working in a virtual environment or using Python downloaded from python.org. To make sure it is installed, simply open a terminal window and run:</p>
+                
+        <pre><code>pip --version</code></pre>
+                
+        <p>If it is installed on your system, it will show the version and the location where <code>pip</code> is stored.</p>
+                
+        <p>However, if your Python environment does not have <code>pip</code> already installed, you can download it from this page: <a  style="color:cadetblue" href="https://pip.pypa.io/en/stable/installation/">Pip Installation</a>. Download the file <code>get-pip.py</code> and run it like a regular Python file in the terminal:</p>
+            
+        <pre><code>python get-pip.py</code></pre>
+            
+        <p>Then hit return, and it will install the entire pip library on your system.</p>
+            
+<!-- --------------------------NOTE---------------------------------------- -->
+
+        <div class="note">
+            <p><strong>Note:</strong> Keep <code>pip</code> updated to have access to the latest package versions and security improvements.</p>
+        </div>
+
+            
+        <p>Once pip is installed, we can bring some popular packages into our program.</p>
+            
+        <p>As mentioned before, the Python Package Index (PyPI) is a software repository for the Python programming language that help you find and install programs developed and shared by the Python community. You can use its search engine to look for packages. Visit <a href="https://pypi.org/">PyPI.</a></p>
+    
+            
+
+        <h1 id="subindice19">6.2. <code>pip</code> Syntax</h1>
+
+        <p><strong><code>pip</code></strong> syntax is very simple:</p>
+         
+        <ul>
+            <li>To see a list of all packages installed in your environment along with their versions, use this command:</li>
+        </ul>
+        <pre><code>pip list</code></pre>
+            
+        <ul>
+            <li>To install a package, use this command:</li>
+        </ul>
+        <pre><code>pip install package_name</code></pre>
+           
+        <ul>
+            <li>To remove a package that you no longer use, you can do so with the following command:</li>
+        </ul>
+        <pre><code>pip uninstall package_name</code></pre>
+            
+        <p>Some more information related to pip commands can be found here: <a style="color:cadetblue" href="https://pip.pypa.io/en/stable/cli/">Pip Command Line Interface</a>.</p>
+           
+            
+
+        <h1 id="subindice20">6.3. Example: Using <code>pip</code> for importing NumPy library</h1>
+
+            
+        <p>We are going to import the NumPy library and use it to create an entire matrix of values using NumPy.</p>            
+            
+        <p>NumPy  is a very powerful package that allows you to process numbers, records, and objects. It allows you to process large collections of data in a very efficient manner. So usually, things that would take you many lines of code to write, numPy has those processes built directly in the library and you can simply call them and then use them in your own programs.</p>            
+        <pre><code>
+import numpy as np
+                
+num_range = np.arange(16)
+                
+num_range
+                
+# array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15])
+                
+num_range.reshape(4, 4)
+                
+# array([[ 0,  1,  2,  3],
+         [ 4,  5,  6,  7],
+         [ 8,  9, 10, 11],
+         [12, 13, 14, 15]])
+                
+        </code></pre>    
+
+            
+        <h2>Explaining the Process: NumPy Array Creation and Reshaping</h1>
+        <p>Let's walk through the process of creating and reshaping a NumPy array:</p>
+            <ol>
+                <li><strong>Import the NumPy Library:</strong></li>
+                <p>We start by importing the NumPy library. This allows us to use the functions and features provided by NumPy throughout our code.</p>
+                <li><strong>Search for the NumPy Library:</strong></li>
+                <p>First, we search for the NumPy library on the Python Package Index website: <a style="color:cadetblue" href="https://pypi.org/project/numpy/">NumPy on PyPI</a>.</p>
+                <li><strong>Install NumPy:</strong></li>
+                <p>Next, open your terminal and type:</p>
+                <pre><code>pip install numpy</code></pre>
+                <p>If you already have the library installed, it will skip the installation process.</p>
+                <li><strong>Import NumPy and Alias It:</strong></li>
+                <p>Start Python and import NumPy while aliasing it to <code>np</code>:</p>
+                <pre><code>import numpy as np</code></pre>
+                <li><strong>Create an Array:</strong></li>
+                <p>Create an array called <code>num_range</code> containing integers from 0 to 15 (inclusive) using the <code>range()</code> function:</p>
+                <pre><code>num_range = np.arange(16)</code></pre>
+                <p>This generates a sequence of numbers with the specified range.</p>
+                <li><strong>Display the Array:</strong></li>
+                <p>When you run <code>num_range</code>, you get the following output:</p>
+                <pre><code>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15])</code></pre>
+                <p>This shows the elements of the array in a single row.</p>
+                <li><strong>Reshape the Array:</strong></li>
+                <p>Use the following line to reshape the original array into a 4x4 array:</p>
+                <pre><code>num_range.reshape(4, 4)</code></pre>
+                <p>The resulting array looks like this:</p>
+                <pre><code>
+array([[ 0,  1,  2,  3],
+        [ 4,  5,  6,  7],
+        [ 8,  9, 10, 11],
+        [12, 13, 14, 15]])
+                </code></pre>
+            </ol>
+        <p>NumPy provides powerful tools for array manipulation and numerical computations.</p>
+          
+            
+
+        <p> It's obviously possible to perform everything that we just did above in pure python code without a library, but we can see how much easier it is when we leverage outside tools.
+        </p>
+        <p>NumPy arrays are more memory-efficient than Python lists, especially for large datasets.
+        </p>            
+        <p>You can go and look at the documentation and explore how many different functions and packages are available in NumPy here:  <a style="color:cadetblue" href="https://numpy.org/doc/stable/user/absolute_beginners.html ">NumPy: the absolute basics for beginners</a></p>            
+                
+        <div class="resources"> 
+            <h2>References and further reading about pip:</h2>
+            <p>Visit the official website: <a href="https://pypi.org/project/pip/">Project Pip</a>     
+            </p>
+            <a href="https://www.freecodecamp.org/news/how-to-use-pip-install-in-python/">How to Use pip install in Python</a>
+            <a href="https://pip.pypa.io/en/stable/installation/">Pip Installation</a>
+            <br>
+            <a href="https://basque.devcamp.com/pt-full-stack-development-javascript-python-react/guide/introduction-numpy-package-python">Introduction to the Numpy Package in Python</a>
+        </div>
+
+            <!-- Footer ------------ -->
+         <div class="footer">
+                <br>
+                <a href="#cabecera">Copyright © Isabel Hormaeche &#124; M3C5 - Checkpoint Assignment</a>
+                <br>
+                <p>Inspiration from <a href="https://docs.python.org/3/reference/compound_stmts.html#the-if-statement"><strong>Python</strong></a> and <a href="https://www.sphinx-doc.org/"><strong>Sphinx</strong></a></p>
+        </div> 
+    </div>
+
+    <div class="right-column">
+        <!-- BUTTON UP al ancla #cabecera-->
+         <a href="#cabecera" class="btn-up" target="_top">
+            <i class="fa-solid fa-up-long"></i>
+        </a>
+    </div>
+        
+</body>
+</html>
